@@ -1,0 +1,13 @@
+version: '3'
+services:
+  db-spring:
+    container_name: jwt-auth
+    image: 'postgres:13'
+    environment:
+      POSTGRES_PASSWORD: jwt-auth
+      POSTGRES_USER: jwt-auth
+      POSTGRES_DB: jwt-auth
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
