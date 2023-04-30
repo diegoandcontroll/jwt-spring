@@ -1,6 +1,6 @@
+version: '3'
 services:
-  postgres:
-    container_name: jwt-auth
+  db:
     image: postgres
     environment:
       POSTGRES_USER: jwt-auth
@@ -12,11 +12,20 @@ services:
     ports:
       - "5432:5432"
     networks:
-      - postgres
+      - db
     restart: unless-stopped
+  springservice:
+    container_name: spring3
+    image: spring3-example:0.0.2-SNAPSHOT
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    networks:
+      - db
 
 networks:
-  postgres:
+  db:
     driver: bridge
 
 volumes:

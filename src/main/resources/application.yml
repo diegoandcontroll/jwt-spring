@@ -1,6 +1,8 @@
+server:
+  port: 8080
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/jwt-auth
+    url: jdbc:postgresql://db:5432/jwt-auth
     username: jwt-auth
     password: jwt-auth
     driver-class-name: org.postgresql.Driver
@@ -15,7 +17,9 @@ spring:
     open-in-view: false
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
 application:
   security:
     jwt:
