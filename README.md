@@ -29,6 +29,8 @@ To build and run the project, follow these steps:
 * Navigate to the project directory: cd spring-boot-security-jwt
 * Add database "jwt_security" to postgres 
 * Build the project: mvn clean install
-* Run the project: mvn spring-boot:run 
+* Build docker image: mvn jib:dockerBuild 
+* Run the project: docker-compose up -d or mvn spring-boot:run 
 
 -> The application will be available at http://localhost:8080.
+-> Docs in path - http://localhost:8080/swagger-ui/index.html
